@@ -11,3 +11,5 @@ Inspired by https://github.com/linux-china/kotlin-wasm-node-demo & https://githu
    - **Fibonacci:** `/fibonacciJs?i={number}` & `/fibonacciWasm?i={number}`
    - **PrimeFactorization:** `/primeFactorizationJs?i={number}` & `/primeFactorizationWasm?i={number}`
      - includes custom logic for passing number arrays from Wasm to JS utilizing `ScopedMemoryAllocator`, see also `memoryUtils.kt`
+   - **WASI println:** `/printToStdout?i={any}`
+       - utilizes hacky WASI fd_write support to print the incoming value to stdout 

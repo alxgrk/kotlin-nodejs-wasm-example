@@ -2,6 +2,7 @@ import express from "express";
 import fibonacci from "./wasmLibraries/fibonacci.mjs";
 import countTo from "./wasmLibraries/countTo.mjs";
 import primeFactorization from "./wasmLibraries/primeFactorization.mjs";
+import printToStdout from "./wasmLibraries/printToStdout.mjs";
 import { Piscina } from 'piscina';
 
 const piscina = new Piscina({
@@ -93,6 +94,11 @@ app.get('/primeFactorizationJs', (req, res) => {
     }
     console.timeEnd("primeFactorizationJs")
     res.json({result: factors})
+})
+app.get('/printToStdout', (req, res) => {
+    const i = req.query.i ?? 0;
+    printToStdout(i)
+    res.send()
 })
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
