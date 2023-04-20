@@ -4,8 +4,8 @@
   "description": "A Node.js app that uses worker threads to calculate fibonacci number using a Kotlin/Wasm library.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --experimental-wasi-unstable-preview1 --experimental-wasm-gc index.mjs",
-    "debug": "nodemon --experimental-wasi-unstable-preview1 --experimental-wasm-gc --inspect index.mjs",
+    "start": "nodemon --experimental-wasm-gc index.mjs",
+    "debug": "nodemon --experimental-wasm-gc --inspect index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "alxgrk",

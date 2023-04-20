@@ -34,9 +34,7 @@ rootProject.tasks.withType(KotlinNpmInstallTask::class.java) {
     args += "--ignore-engines"
 }
 rootProject.plugins.withType(NodeJsRootPlugin::class.java) {
-    val extension = rootProject.the<NodeJsRootExtension>()
-    extension.nodeVersion = "20.0.0-v8-canary2023022187dda913b0"
-    extension.nodeDownloadBaseUrl = "https://nodejs.org/download/v8-canary"
+    rootProject.the<NodeJsRootExtension>().nodeVersion = "20.0.0"
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {

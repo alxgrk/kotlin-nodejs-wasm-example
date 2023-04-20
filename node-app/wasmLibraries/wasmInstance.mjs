@@ -11,7 +11,9 @@ let instance;
 export async function createInstanceWithImportObject(importObject, needsWasi = true) {
     if (needsWasi) {
         const { WASI } = await import("wasi");
-        const wasi = new WASI();
+        const wasi = new WASI({
+            version: 'preview1'
+        });
         const instance = await instantiate({ wasi_snapshot_preview1: wasi.wasiImport, ...importObject});
         wasi.initialize(instance);
         return instance;
